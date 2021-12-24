@@ -1,0 +1,10 @@
+*
+!/.gitignore
+!/.nvmrc
+!/config.json
+!/package.json
+!/sample.env
+!/src/
+!/src/**
+!/tsconfig.json
+!/yarn.lock

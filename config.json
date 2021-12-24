@@ -1,0 +1,19 @@
+{
+  "prefix": "$",
+  "owners": ["441743028227538944", "158621980084404224"],
+  "presence_game": "with your FOX",
+  "tipcc_bot_id": "617037497574359050",
+  "currencies": [
+    {
+      "tipcc": "xFOX",
+      "label": "xFOX",
+      "emote": "<:xFOX:922920131749879878>"
+    },
+    {
+      "tipcc": "FOX",
+      "label": "FOX",
+      "emote": "<:FOX:922920039747846154>"
+    }
+  ],
+  "swap_timeout": 30000
+}
