@@ -1,0 +1,11 @@
+services:
+  fox-bridge:
+    build:
+      context: ./
+    env_file: .env
+    volumes:
+      - type: bind
+        source: ./config.json
+        target: /app/config.json
+        read_only: true
+    restart: unless-stopped

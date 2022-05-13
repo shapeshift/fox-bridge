@@ -1,7 +1,10 @@
 *
+!/.dockerignore
 !/.gitignore
 !/.nvmrc
+!/Dockerfile
 !/config.json
+!/docker-compose.yml
 !/package.json
 !/sample.env
 !/src/
