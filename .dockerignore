@@ -1,0 +1,7 @@
+*
+!/.nvmrc
+!/package.json
+!/src/
+!/src/*
+!/tsconfig.json
+!/yarn.lock

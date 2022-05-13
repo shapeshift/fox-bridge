@@ -7,11 +7,7 @@ import { presence_game } from "../../config.json";
 import type { CryptoDevClient } from "../Structures/CryptoDevClient";
 import { Event } from "../Structures/Event";
 
-const BOT_TOKEN = (() => {
-  const out = process.env["BOT_TOKEN"];
-  if (!out) throw new Error("BOT_TOKEN not set");
-  return out
-})();
+import { BOT_TOKEN } from "../token";
 
 export class ReadyEvent extends Event {
   constructor(client: CryptoDevClient) {
