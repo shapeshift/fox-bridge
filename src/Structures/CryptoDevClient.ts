@@ -8,6 +8,8 @@ import * as Events from "../Events";
 import * as MessageCommands from "../MessageCommands";
 import * as SlashCommands from "../SlashCommands";
 
+import * as config from "../../config.json";
+
 export class CryptoDevClient extends Client {
   readonly token: string
   readonly messageCommands = new Collection<string, MessageCommand>();
@@ -59,5 +61,21 @@ export class CryptoDevClient extends Client {
     }
 
     await super.login(this.token);
+
+    const availableEmoji = []
+    for (const [guildId, oauthGuild] of await this.guilds.fetch()) {
+      console.log(`in guild ${guildId} (${oauthGuild.name})`)
+      const guild = await oauthGuild.fetch()
+      for (const [emojiId, emojiObj] of await guild.emojis.fetch()) {
+        availableEmoji.push(emojiObj.toString())
+        console.log(`guild ${guildId} has emoji ${emojiObj}`)
+      }
+    }
+
+    for (const currency of config.currencies) {
+      if (currency.emote && !availableEmoji.includes(currency.emote)) {
+        console.warn(`currency '${currency.label}' specifies emoji '${currency.emote}' which is not in any connected guilds`)
+      }
+    }
   }
 }
