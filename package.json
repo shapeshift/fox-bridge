@@ -2,7 +2,7 @@
   "license": "MIT",
   "main": "./src/index.ts",
   "scripts": {
-    "start": "ts-node ./src/index.ts",
+    "start": "sleep 10; ts-node ./src/index.ts",
     "lint": "prettier -w ."
   },
   "dependencies": {
